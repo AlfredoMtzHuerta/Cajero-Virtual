@@ -1,0 +1,50 @@
+#include <iostream>
+#include "OperacionCajero.h"
+using namespace std;
+
+
+int main()
+{
+	int saldoTotal = 1000, opc = 0, saldoAlmacenar = 0, saldoRetirar = 0, i = 0;
+	setSaldoTotal(saldoTotal);
+	
+	do
+	{
+		cout<<"\t\t|********************************|"<<endl;
+		cout<<"\t\t|  BIENVENIDO A SU CAJERO VIRTUAL|"<<endl;
+		cout<<"\t\t| 1. Ingresar Saldo              |"<<endl;
+		cout<<"\t\t| 2. Retirar Saldo               |"<<endl;
+		cout<<"\t\t| 3. Consultar Saldo             |"<<endl;
+		cout<<"\t\t| 4. Salir                       |"<<endl;
+		cout<<"\t\t|                                |"<<endl;
+		cout<<"\t\t ********************************\n"<<endl;
+		cout<<"\t\t ELIJA UNA OPCION -> "; cin>>opc;
+		
+	switch(opc)
+	{
+		case 1:
+			//system("cls");
+			cout<<"ingrese el saldo a registrar: "; cin>>saldoAlmacenar;	i++;
+			SumarSaldo(saldoAlmacenar);
+		cout<<"\n"<<endl;
+			 
+		break;
+		
+		case 2:
+			cout<<"Ingrese el saldo a retirar: "; cin>>saldoRetirar;
+			RetirarSaldo(saldoRetirar);
+			cout<<endl;
+			break;
+			
+		case 3:
+			cout<<"usted cuenta con un saldo de: "<<getSaldo()<<endl;
+			break;
+			
+		case 4: cout<<"Hasta luego :D"<<endl;break;
+			
+			default: cout<<"ERROR!!! ingrese una opcion del menu" <<endl;
+	}	
+		
+	}while(opc != 4);
+	
+	return 0;
