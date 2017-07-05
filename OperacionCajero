@@ -1,0 +1,55 @@
+
+#include <iostream>
+using namespace std;
+
+int saldo = 0;
+void setSaldoTotal(int saldoTotal)
+{
+	saldo = saldoTotal;
+}
+
+int getSaldo()
+{
+	return saldo;
+}
+
+void RetirarSaldo(int retirarMonto)
+{
+	int saldoNuevo = 0;
+	
+	if(retirarMonto < 0)
+	{
+		cout<<"El monto es negativo no puedes retirar "<<endl;
+	}
+	else if(getSaldo <= 0)
+	{
+		cout<<"Usted No Tiene Fondos"<<endl;		
+	}
+	else if(retirarMonto > getSaldo())
+	{
+		cout<<"No Cuenta Con Esa Cantidad "<<endl;	
+	}
+	else
+	{
+		saldoNuevo = getSaldo() - retirarMonto;
+		setSaldoTotal(saldoNuevo);
+		cout<<"Saldo Retirado, ahora cuenta con: "<<getSaldo()<<endl;
+	}
+}
+
+void SumarSaldo(int saldoAgregado)
+{
+	int sumaTotal = 0;
+	
+	
+	if(saldoAgregado < 0)
+	{
+		cout<<"ERROR!! El saldo es negativo"<<endl;
+	}
+	else
+	{
+		sumaTotal = getSaldo() + saldoAgregado;
+		setSaldoTotal(sumaTotal);
+		cout<<"El saldo ah sido registrado"<<endl;
+	}
+}
